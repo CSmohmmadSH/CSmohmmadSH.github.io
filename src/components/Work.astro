@@ -1,0 +1,82 @@
+---
+import { profile, flagship, pipeline, platformSpecs, projects } from '../data/site.js';
+---
+<section id="work" class="section--work">
+  <div class="work__head reveal--head">
+    <h2 class="section-label">01 — Work</h2>
+    <a class="work__all" href={profile.github}>All repositories →</a>
+  </div>
+
+  <article class="case reveal">
+    <div class="case__head">
+      <h3 class="case__title">{flagship.title}</h3>
+      <span class="case__meta">{flagship.meta}</span>
+    </div>
+    <p class="case__body">{flagship.body}</p>
+
+    <!-- Signature visual: canary traffic shift -->
+    <div class="meter">
+      <div class="meter__head">
+        <div class="meter__label">Canary traffic shift</div>
+        <div class="meter__note">istio · virtualservice weights</div>
+      </div>
+      <div class="meter__tracks">
+        <div>
+          <div class="track__name track__name--stable">v1 · stable</div>
+          <div class="track">
+            <div class="track__fill track__fill--stable"></div>
+          </div>
+        </div>
+        <div>
+          <div class="track__name track__name--canary">v2 · canary</div>
+          <div class="track">
+            <div class="track__fill track__fill--canary"></div>
+            <div class="track__sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case__grid">
+      <div>
+        <div class="block-label">Delivery path</div>
+        <div class="timeline">
+          {pipeline.map((step) => (
+            <div class="timeline__row">
+              <div class="timeline__n">{step.n}</div>
+              <div>
+                <div class="timeline__title">{step.title}</div>
+                <div class="timeline__detail">{step.detail}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="rows">
+        {platformSpecs.map((spec) => (
+          <div class="rows__item rows__item--split">
+            <span class="rows__k">{spec.k}</span>
+            <span class="rows__v">{spec.v}</span>
+          </div>
+        ))}
+        <div class="rows__item">
+          <a class="rows__link" href={flagship.repo}>View repository →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="cards reveal">
+    {projects.map((p) => (
+      <article class="card">
+        <div class="card__meta">{p.meta}</div>
+        <h3 class="card__title">{p.title}</h3>
+        <p class="card__body">{p.body}</p>
+        {p.link
+          ? <a class="card__link" href={p.link}>{p.linkLabel}</a>
+          : <span class="card__link card__link--muted">{p.linkLabel}</span>}
+      </article>
+    ))}
+  </div>
+</section>

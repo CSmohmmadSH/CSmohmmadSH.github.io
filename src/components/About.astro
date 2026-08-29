@@ -1,0 +1,20 @@
+---
+import { about, facts } from '../data/site.js';
+---
+<section id="about" class="section--about">
+  <h2 class="section-label">03 — About</h2>
+  <div class="about reveal">
+    <div>
+      <p class="about__lead">{about.lead}</p>
+      {about.paragraphs.map((p) => <p class="about__p">{p}</p>)}
+    </div>
+    <div class="rows">
+      {facts.map((fact) => (
+        <div class="rows__item">
+          <div class="fact__k">{fact.k}</div>
+          <div class="fact__v">{fact.v}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

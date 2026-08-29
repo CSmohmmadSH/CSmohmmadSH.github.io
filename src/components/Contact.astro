@@ -1,0 +1,20 @@
+---
+import { profile, contact } from '../data/site.js';
+---
+<section id="contact" class="section--contact">
+  <h2 class="section-label">04 — Contact</h2>
+  <div class="contact-card reveal">
+    <div class="contact-card__ring contact-card__ring--lg" aria-hidden="true"></div>
+    <div class="contact-card__ring contact-card__ring--sm" aria-hidden="true"></div>
+    <div class="contact-card__inner">
+      <h3 class="contact-card__title">{contact.title}</h3>
+      <p class="contact-card__body">{contact.body}</p>
+      <div class="contact-actions">
+        <a class="btn btn--solid" href={`mailto:${profile.email}`}>{profile.email}</a>
+        <a class="btn btn--ghost" href={profile.github}>GitHub</a>
+        <a class="btn btn--ghost" href={profile.linkedin}>LinkedIn</a>
+        <a class="btn btn--ghost" href={profile.linktree}>All links</a>
+      </div>
+    </div>
+  </div>
+</section>

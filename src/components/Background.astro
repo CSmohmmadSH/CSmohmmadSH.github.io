@@ -1,0 +1,11 @@
+---
+// Three fixed layers behind everything: canvas, gradient veil, dot grid.
+---
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+<div class="dots" aria-hidden="true"></div>
+
+<script>
+  import { initClusterCanvas } from '../scripts/canvas.js';
+  initClusterCanvas();
+</script>

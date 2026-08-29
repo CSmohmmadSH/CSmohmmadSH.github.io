@@ -1,0 +1,21 @@
+---
+import { hero, highlights } from '../data/site.js';
+---
+<section class="hero" id="top">
+  <p class="pill">
+    <span class="pill__dot" aria-hidden="true"></span>
+    <span>{hero.badge}</span>
+  </p>
+
+  <h1 class="hero__title">{hero.title}</h1>
+  <p class="hero__body">{hero.body}</p>
+
+  <div class="highlights">
+    {highlights.map((h) => (
+      <div>
+        <div class="highlight__k">{h.k}</div>
+        <div class="highlight__v">{h.v}</div>
+      </div>
+    ))}
+  </div>
+</section>

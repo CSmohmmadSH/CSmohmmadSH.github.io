@@ -1,0 +1,16 @@
+---
+import { stackGroups } from '../data/site.js';
+---
+<section id="stack" class="section--stack">
+  <h2 class="section-label">02 — Stack</h2>
+  <div class="stack">
+    {stackGroups.map((group) => (
+      <div class="stack__row reveal--row">
+        <div class="stack__label">{group.label}</div>
+        <div class="chips">
+          {group.items.map((item) => <span class="chip">{item}</span>)}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

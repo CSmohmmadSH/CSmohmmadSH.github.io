@@ -1,0 +1,25 @@
+---
+import { profile, nav } from '../data/site.js';
+---
+<header class="header">
+  <div class="header__inner">
+    <a class="brand" href="#top">
+      <img class="brand__avatar" src={profile.avatar} alt="" width="38" height="38" />
+      <span>
+        <span class="brand__name">{profile.name}</span>
+        <span class="brand__role">{profile.role}</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Sections">
+      {nav.map((item) => (
+        <a class="nav__link" href={item.href}>
+          <span class="nav__num">{item.n}</span>
+          <span>{item.label}</span>
+        </a>
+      ))}
+      <a class="btn btn--ghost" href={profile.cv} download>Download CV</a>
+      <a class="btn btn--solid" href={`mailto:${profile.email}`}>Email me</a>
+    </nav>
+  </div>
+</header>
